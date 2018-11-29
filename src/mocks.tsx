@@ -78,7 +78,7 @@ const renderProp = (type: ElementMatcher, ...args: any[]): Unsubscribe => {
       }
       return {
         type: MockedTransparent,
-        props: {itWas: type}, children: (children as any)(...args)
+        props: {...props, itWas: getNameOf(type)}, children: (children as any)(...args)
       }
     }
   )
